@@ -1,44 +1,91 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gustul Cafelei</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustul Cafelei</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <img src="https://via.placeholder.com/60x60.png?text=Logo" alt="Logo">
-      <span>GUSTUL CAFELEI</span>
-    </div>
 
-    <nav class="nav-links">
-      <a href="#">Acasă</a>
-      <a href="#">Meniu</a>
-      <a href="#">Despre</a>
-      <a href="#">Contact</a>
-      <a href="#" class="order-btn">🛒 Comandă</a>
-    </nav>
-  </header>
+    <header>
+        <div class="logo-box">
+            <img src="logo.png" alt="Gustul Cafelei">
+            <h1>GUSTUL CAFELEI</h1>
+        </div>
 
-  <main class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>
-        Creată pentru <br>
-        <span>Perfecțiune</span>
-      </h1>
-      <p>
-        Experimentează arta cafelei la cel mai înalt nivel.
-        Fiecare ceașcă spune o poveste de pasiune și precizie.
-      </p>
+        <nav>
+            <a href="#hero">Acasă</a>
+            <a href="#produse">Produse</a>
+            <a href="#formular">Comandă</a>
+        </nav>
+    </header>
 
-      <div class="hero-buttons">
-        <a href="#" class="btn btn-primary">Descoperim meniu →</a>
-        <a href="#" class="btn btn-secondary">Povestea Noastră</a>
-      </div>
-    </div>
-  </main>
+    <section class="hero" id="hero">
+        <img src="coffee-hero.jpg" alt="Cafea">
+        <div class="hero-text">
+            <h2>Gustul perfect al cafelei</h2>
+            <p>
+                Savurează aroma intensă și echilibrată a cafelei proaspăt preparate,
+                ideală pentru momente de relaxare și energie.
+            </p>
+            <button>Descoperă</button>
+        </div>
+    </section>
+
+    <section id="produse" class="products">
+        <h2>Sortimentele noastre</h2>
+        <p class="products-text">
+            Descoperă băuturile noastre pregătite cu grijă, din ingrediente alese pentru gust și aromă.
+        </p>
+
+        <div class="product-cards">
+            <div class="product-card">
+                <img src="espresso.jpg" alt="Espresso">
+                <h3>Espresso</h3>
+                <p>O cafea intensă și aromată, potrivită pentru un început plin de energie.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="cappuccino.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>O combinație fină de cafea și spumă de lapte, cu gust delicat și echilibrat.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="latte.jpg" alt="Latte">
+                <h3>Latte</h3>
+                <p>O băutură cremoasă și catifelată, ideală pentru momente de relaxare.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="formular" class="contact">
+        <h2>Comandă cafeaua preferată</h2>
+        <p>
+            Completează formularul de mai jos și trimite-ne preferințele tale.
+        </p>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Numele tău" required>
+            <input type="email" placeholder="Email-ul tău" required>
+
+            <select required>
+                <option value="">Alege cafeaua</option>
+                <option value="espresso">Espresso</option>
+                <option value="cappuccino">Cappuccino</option>
+                <option value="latte">Latte</option>
+            </select>
+
+            <textarea placeholder="Scrie mesajul tău" rows="5"></textarea>
+
+            <button type="submit">Trimite</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Gustul Cafelei | Calitate și aromă în fiecare zi</p>
+    </footer>
+
 </body>
 </html>
