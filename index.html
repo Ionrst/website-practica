@@ -25,9 +25,9 @@
     --shadow: 0 2px 16px rgba(0,0,0,0.08);
     --shadow-md: 0 4px 24px rgba(0,0,0,0.12);
   }
-
+ 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   body {
     font-family: 'DM Sans', sans-serif;
     color: var(--black);
@@ -35,7 +35,7 @@
     font-size: 15px;
     line-height: 1.6;
   }
-
+ 
   /* ─── NAVBAR ─── */
   nav {
     position: sticky; top: 0; z-index: 100;
@@ -87,7 +87,7 @@
     width: 18px; height: 18px;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
   }
-
+ 
   /* ─── HERO ─── */
   .hero {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -167,7 +167,7 @@
   }
   .hero-badge-float strong { display: block; font-size: 0.9rem; font-weight: 700; }
   .hero-badge-float span { font-size: 0.8rem; color: var(--gray-600); }
-
+ 
   /* ─── CATEGORIES ─── */
   .section { padding: 64px 40px; }
   .section-header { text-align: center; margin-bottom: 40px; }
@@ -176,7 +176,7 @@
     font-size: 1.6rem; font-weight: 700; margin-bottom: 8px;
   }
   .section-header p { color: var(--gray-600); }
-
+ 
   .categories-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -208,7 +208,15 @@
     font-size: 0.9rem; font-weight: 600;
     padding: 10px 8px; text-align: center;
   }
-
+ 
+  /* product placeholder for broken images */
+  .img-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #f1f1f1 0%, #e5e5e5 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+  }
+ 
   /* ─── BRANDS ─── */
   .brands-section {
     background: var(--gray-50);
@@ -231,7 +239,7 @@
     transition: color 0.2s;
   }
   .brands-list span:hover { color: var(--black); }
-
+ 
   /* ─── OFFERS ─── */
   .offers-header {
     display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
@@ -277,7 +285,7 @@
     transition: text-decoration 0.1s;
   }
   .offer-footer a:hover { text-decoration: underline; }
-
+ 
   /* ─── PRODUCTS ─── */
   .products-section { padding: 64px 40px; }
   .products-header { margin-bottom: 32px; }
@@ -286,7 +294,7 @@
   }
   .products-header p { color: var(--gray-600); }
   .products-layout { display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
-
+ 
   /* FILTERS */
   .filters-panel {
     border: 1.5px solid var(--gray-200); border-radius: var(--radius);
@@ -327,7 +335,7 @@
     margin-top: 12px; padding: 0; text-decoration: underline;
   }
   .reset-btn:hover { color: var(--black); }
-
+ 
   /* PRODUCT GRID */
   .products-count { color: var(--gray-600); font-size: 0.9rem; margin-bottom: 20px; }
   .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -340,6 +348,7 @@
   .product-img {
     height: 180px; position: relative; overflow: hidden;
     background: var(--gray-100);
+    display: flex; align-items: center; justify-content: center;
   }
   .product-img img {
     width: 100%; height: 100%; object-fit: cover;
@@ -384,7 +393,7 @@
   .btn-add:disabled {
     background: var(--gray-200); color: var(--gray-400); cursor: not-allowed;
   }
-
+ 
   /* ─── REVIEWS ─── */
   .reviews-section { padding: 64px 40px; background: var(--gray-50); }
   .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 48px; }
@@ -404,7 +413,7 @@
   .review-author strong { display: block; font-weight: 700; font-size: 0.9rem; }
   .review-author span { font-size: 0.82rem; color: var(--gray-600); }
   .review-date { font-size: 0.82rem; color: var(--gray-400); }
-
+ 
   .stats-row {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 20px; text-align: center;
@@ -414,7 +423,7 @@
     font-size: 2.4rem; font-weight: 800; margin-bottom: 4px;
   }
   .stat-label { color: var(--gray-600); font-size: 0.9rem; }
-
+ 
   /* ─── FAQ ─── */
   .faq-section { padding: 64px 40px; max-width: 760px; margin: 0 auto; }
   .faq-header { text-align: center; margin-bottom: 40px; }
@@ -449,7 +458,7 @@
   .faq-item.open .faq-a {
     max-height: 200px; padding: 0 20px 18px;
   }
-
+ 
   /* ─── FOOTER ─── */
   footer {
     background: var(--black); color: var(--white);
@@ -474,7 +483,7 @@
     display: flex; justify-content: space-between; align-items: center;
     color: #666; font-size: 0.85rem;
   }
-
+ 
   /* ─── CHAT BUTTON ─── */
   .chat-btn {
     position: fixed; bottom: 24px; left: 24px; z-index: 200;
@@ -486,7 +495,7 @@
     font-size: 1.2rem;
   }
   .chat-btn:hover { transform: scale(1.1); }
-
+ 
   /* ─── TOAST ─── */
   .toast {
     position: fixed; bottom: 32px; right: 32px; z-index: 300;
@@ -498,9 +507,15 @@
     pointer-events: none;
   }
   .toast.show { opacity: 1; transform: translateY(0); }
-
-  img { background: var(--gray-100); }
-
+ 
+  /* SVG product icons fallback */
+  .product-icon-wrap {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #f8f8f8 0%, #ececec 100%);
+    font-size: 3.5rem;
+  }
+ 
   @media (max-width: 1024px) {
     .categories-grid { grid-template-columns: repeat(3, 1fr); }
     .products-grid { grid-template-columns: repeat(2, 1fr); }
@@ -524,7 +539,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAVBAR -->
 <nav>
   <a href="#" class="nav-logo">TechStore MD</a>
@@ -543,7 +558,7 @@
     <span class="cart-badge" id="cartBadge">0</span>
   </button>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
@@ -570,8 +585,8 @@
     </div>
   </div>
   <div class="hero-image">
-    <!-- MacBook Pro real photo -->
-    <img src="https://images.unsplash.com/photo-1611186871525-eb2c80abe9b0?w=800&q=80" alt="MacBook Pro" loading="eager">
+    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80" alt="MacBook Pro" loading="eager"
+         onerror="this.parentElement.innerHTML='<div class=\'product-icon-wrap\'>💻</div>'">
     <div class="hero-badge-float">
       <div class="hero-badge-icon">
         <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
@@ -583,7 +598,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CATEGORIES -->
 <section class="section">
   <div class="section-header">
@@ -593,44 +608,49 @@
   <div class="categories-grid">
     <a href="#" class="category-card" onclick="filterCategory('Laptopuri'); return false;">
       <div class="category-card-img">
-        <!-- Laptop real - deschis pe birou -->
-        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400&q=80" alt="Laptopuri" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&q=80" alt="Laptopuri" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div class=\'product-icon-wrap\'>💻</div>'">
       </div>
       <span>Laptopuri</span>
     </a>
     <a href="#" class="category-card" onclick="filterCategory('Telefoane'); return false;">
       <div class="category-card-img">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&q=80" alt="Telefoane" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1592899677977-9c10002761d0?w=400&q=80" alt="Telefoane" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div class=\'product-icon-wrap\'>📱</div>'">
       </div>
       <span>Telefoane</span>
     </a>
     <a href="#" class="category-card" onclick="filterCategory('Tablete'); return false;">
       <div class="category-card-img">
-        <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&q=80" alt="Tablete" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1589739900266-43b2843f4c12?w=400&q=80" alt="Tablete" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div class=\'product-icon-wrap\'>📲</div>'">
       </div>
       <span>Tablete</span>
     </a>
     <a href="#" class="category-card" onclick="filterCategory('Accesorii'); return false;">
       <div class="category-card-img">
-        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80" alt="Accesorii" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&q=80" alt="Accesorii" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div class=\'product-icon-wrap\'>🎧</div>'">
       </div>
       <span>Accesorii</span>
     </a>
     <a href="#" class="category-card" onclick="filterCategory('Monitoare'); return false;">
       <div class="category-card-img">
-        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80" alt="Monitoare" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1547119957-637f8679db1e?w=400&q=80" alt="Monitoare" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div class=\'product-icon-wrap\'>🖥️</div>'">
       </div>
       <span>Monitoare</span>
     </a>
     <a href="#" class="category-card" onclick="filterCategory('Wearables'); return false;">
       <div class="category-card-img">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80" alt="Wearables" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1544117519-31a4b719223d?w=400&q=80" alt="Wearables" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div class=\'product-icon-wrap\'>⌚</div>'">
       </div>
       <span>Wearables</span>
     </a>
   </div>
 </section>
-
+ 
 <!-- BRANDS -->
 <div class="brands-section">
   <div class="brands-label">Branduri de încredere</div>
@@ -645,7 +665,7 @@
     <span>Logitech</span>
   </div>
 </div>
-
+ 
 <!-- OFERTE SPECIALE -->
 <section class="section" id="oferte">
   <div class="offers-header">
@@ -656,8 +676,8 @@
   <div class="offers-grid">
     <div class="offer-card">
       <div class="offer-img">
-        <!-- Laptop gaming real -->
-        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&q=80" alt="Laptop gaming" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80" alt="Laptop gaming" loading="lazy"
+             onerror="this.parentElement.innerHTML+='<div class=\'product-icon-wrap\'>🎮</div>'; this.style.display='none'">
         <span class="offer-badge badge-red">-30%</span>
       </div>
       <div class="offer-body">
@@ -671,7 +691,8 @@
     </div>
     <div class="offer-card">
       <div class="offer-img">
-        <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=600&q=80" alt="iPhone 15 Pro" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=600&q=80" alt="iPhone" loading="lazy"
+             onerror="this.parentElement.innerHTML+='<div class=\'product-icon-wrap\'>📱</div>'; this.style.display='none'">
         <span class="offer-badge badge-blue">-15%</span>
       </div>
       <div class="offer-body">
@@ -685,8 +706,8 @@
     </div>
     <div class="offer-card">
       <div class="offer-img">
-        <!-- MacBook real -->
-        <img src="https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?w=600&q=80" alt="MacBook Bundle" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" alt="MacBook Bundle" loading="lazy"
+             onerror="this.parentElement.innerHTML+='<div class=\'product-icon-wrap\'>💻</div>'; this.style.display='none'">
         <span class="offer-badge badge-green">SAVE</span>
       </div>
       <div class="offer-body">
@@ -700,7 +721,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- PRODUCTS -->
 <section class="products-section" id="products">
   <div class="products-header">
@@ -734,7 +755,7 @@
       </div>
       <button class="reset-btn" onclick="resetFilters()">Resetează filtrele</button>
     </aside>
-
+ 
     <!-- GRID -->
     <div>
       <div class="products-count" id="productsCount">12 produse găsite</div>
@@ -742,7 +763,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- REVIEWS -->
 <section class="reviews-section">
   <div class="section-header">
@@ -794,7 +815,7 @@
     <div><div class="stat-num">99%</div><div class="stat-label">Recomandări</div></div>
   </div>
 </section>
-
+ 
 <!-- FAQ -->
 <section style="padding: 64px 40px;">
   <div style="max-width: 760px; margin: 0 auto;">
@@ -849,7 +870,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
@@ -889,115 +910,125 @@
     <span>Politica de confidențialitate · Termeni și condiții</span>
   </div>
 </footer>
-
+ 
 <!-- CHAT BTN -->
 <button class="chat-btn" title="Chat support">💬</button>
-
+ 
 <!-- TOAST -->
 <div class="toast" id="toast">✓ Produs adăugat în coș!</div>
-
+ 
 <script>
-  // ── PRODUCTS DATA cu poze REALE de laptopuri și alte produse ──
+  // ── PRODUCTS DATA cu emoji fallback pentru fiecare produs ──
   const products = [
     {
-      id:1, cat:'Laptopuri',
-      name:'Laptop Dell XPS 15 – Intel Core i7, 16GB RAM, 512GB SSD',
-      price:28999, rating:4.8, reviews:124,
-      // Dell XPS real photo
-      img:'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&q=80',
-      inStock:true
+      id: 1, cat: 'Laptopuri',
+      name: 'Laptop Dell XPS 15 – Intel Core i7, 16GB RAM, 512GB SSD',
+      price: 28999, rating: 4.8, reviews: 124,
+      img: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=500&q=80',
+      emoji: '💻',
+      inStock: true
     },
     {
-      id:2, cat:'Telefoane',
-      name:'iPhone 15 Pro Max 256GB – Titanium Natural',
-      price:24500, rating:4.9, reviews:342,
-      img:'https://images.unsplash.com/photo-1696446701796-da61225697cc?w=500&q=80',
-      inStock:true
+      id: 2, cat: 'Telefoane',
+      name: 'iPhone 15 Pro Max 256GB – Titanium Natural',
+      price: 24500, rating: 4.9, reviews: 342,
+      img: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=500&q=80',
+      emoji: '📱',
+      inStock: true
     },
     {
-      id:3, cat:'Telefoane',
-      name:'Samsung Galaxy S24 Ultra 512GB',
-      price:22300, rating:4.7, reviews:298,
-      img:'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=80',
-      inStock:true
+      id: 3, cat: 'Telefoane',
+      name: 'Samsung Galaxy S24 Ultra 512GB',
+      price: 22300, rating: 4.7, reviews: 298,
+      img: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=80',
+      emoji: '📱',
+      inStock: true
     },
     {
-      id:4, cat:'Laptopuri',
-      name:'MacBook Pro 14" M3 Pro – 18GB RAM, 1TB SSD',
-      price:45999, rating:5, reviews:187,
-      // MacBook Pro real, clar, pe birou
-      img:'https://images.unsplash.com/photo-1611186871525-eb2c80abe9b0?w=500&q=80',
-      inStock:true
+      id: 4, cat: 'Laptopuri',
+      name: 'MacBook Pro 14" M3 Pro – 18GB RAM, 1TB SSD',
+      price: 45999, rating: 5, reviews: 187,
+      img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80',
+      emoji: '💻',
+      inStock: true
     },
     {
-      id:5, cat:'Accesorii',
-      name:'Sony WH-1000XM5 – Căști wireless cu noise cancelling',
-      price:7899, rating:4.8, reviews:456,
-      img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80',
-      inStock:true
+      id: 5, cat: 'Accesorii',
+      name: 'Sony WH-1000XM5 – Căști wireless cu noise cancelling',
+      price: 7899, rating: 4.8, reviews: 456,
+      img: 'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500&q=80',
+      emoji: '🎧',
+      inStock: true
     },
     {
-      id:6, cat:'Tablete',
-      name:'iPad Pro 12.9" M2 – 256GB Wi-Fi',
-      price:21999, rating:4.9, reviews:234,
-      img:'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80',
-      inStock:true
+      id: 6, cat: 'Tablete',
+      name: 'iPad Pro 12.9" M2 – 256GB Wi-Fi',
+      price: 21999, rating: 4.9, reviews: 234,
+      img: 'https://images.unsplash.com/photo-1589739900266-43b2843f4c12?w=500&q=80',
+      emoji: '📲',
+      inStock: true
     },
     {
-      id:7, cat:'Accesorii',
-      name:'Logitech MX Master 3S – Mouse wireless',
-      price:1899, rating:4.7, reviews:678,
-      img:'https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&q=80',
-      inStock:true
+      id: 7, cat: 'Accesorii',
+      name: 'Logitech MX Master 3S – Mouse wireless',
+      price: 1899, rating: 4.7, reviews: 678,
+      img: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&q=80',
+      emoji: '🖱️',
+      inStock: true
     },
     {
-      id:8, cat:'Monitoare',
-      name:'Samsung 27" Monitor 4K UHD – 144Hz',
-      price:8499, rating:4.6, reviews:189,
-      img:'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80',
-      inStock:true
+      id: 8, cat: 'Monitoare',
+      name: 'Samsung 27" Monitor 4K UHD – 144Hz',
+      price: 8499, rating: 4.6, reviews: 189,
+      img: 'https://images.unsplash.com/photo-1547119957-637f8679db1e?w=500&q=80',
+      emoji: '🖥️',
+      inStock: true
     },
     {
-      id:9, cat:'Wearables',
-      name:'Apple Watch Series 9 – GPS + Cellular 45mm',
-      price:9899, rating:4.8, reviews:523,
-      img:'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80',
-      inStock:false
+      id: 9, cat: 'Wearables',
+      name: 'Apple Watch Series 9 – GPS + Cellular 45mm',
+      price: 9899, rating: 4.8, reviews: 523,
+      img: 'https://images.unsplash.com/photo-1544117519-31a4b719223d?w=500&q=80',
+      emoji: '⌚',
+      inStock: false
     },
     {
-      id:10, cat:'Accesorii',
-      name:'Keychron K8 Pro – Tastatură mecanică wireless',
-      price:2199, rating:4.7, reviews:312,
-      img:'https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&q=80',
-      inStock:true
+      id: 10, cat: 'Accesorii',
+      name: 'Keychron K8 Pro – Tastatură mecanică wireless',
+      price: 2199, rating: 4.7, reviews: 312,
+      img: 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&q=80',
+      emoji: '⌨️',
+      inStock: true
     },
     {
-      id:11, cat:'Accesorii',
-      name:'AirPods Pro (2nd generation) cu USB-C',
-      price:5499, rating:4.9, reviews:892,
-      img:'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=500&q=80',
-      inStock:true
+      id: 11, cat: 'Accesorii',
+      name: 'AirPods Pro (2nd generation) cu USB-C',
+      price: 5499, rating: 4.9, reviews: 892,
+      img: 'https://images.unsplash.com/photo-1606741965509-717c3f54e4c5?w=500&q=80',
+      emoji: '🎧',
+      inStock: true
     },
     {
-      id:12, cat:'Laptopuri',
-      name:'Asus ROG Strix Gaming Laptop – RTX 4070, 32GB RAM',
-      price:35999, rating:4.7, reviews:156,
-      // ROG gaming laptop real
-      img:'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&q=80',
-      inStock:true
+      id: 12, cat: 'Laptopuri',
+      name: 'Asus ROG Strix Gaming Laptop – RTX 4070, 32GB RAM',
+      price: 35999, rating: 4.7, reviews: 156,
+      img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80',
+      emoji: '🎮',
+      inStock: true
     },
   ];
-
+ 
   let cartCount = 0;
   let activeCategory = 'Toate';
-
+ 
   function renderProducts(list) {
     const grid = document.getElementById('productsGrid');
     document.getElementById('productsCount').textContent = list.length + ' produse găsite';
     grid.innerHTML = list.map(p => `
       <div class="product-card">
         <div class="product-img">
-          <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
+          <img src="${p.img}" alt="${p.name}" loading="lazy"
+               onerror="this.style.display='none'; this.nextElementSibling && (this.nextElementSibling.style.display='flex'); if(!this.nextSibling || !this.nextSibling.classList || !this.nextSibling.classList.contains('img-placeholder')) { let d=document.createElement('div'); d.className='product-icon-wrap'; d.textContent='${p.emoji}'; this.parentElement.insertBefore(d, this.nextSibling); }">
           ${!p.inStock ? `<div class="out-of-stock-overlay"><span>Stoc epuizat</span></div>` : ''}
         </div>
         <div class="product-body">
@@ -1017,7 +1048,7 @@
       </div>
     `).join('');
   }
-
+ 
   function filterProducts() {
     const min = parseInt(document.getElementById('priceMin').value) || 0;
     const max = parseInt(document.getElementById('priceMax').value) || 999999;
@@ -1025,19 +1056,19 @@
     if (activeCategory !== 'Toate') filtered = filtered.filter(p => p.cat === activeCategory);
     renderProducts(filtered);
   }
-
+ 
   function filterByRadio(el) {
     activeCategory = el.value;
     filterProducts();
   }
-
+ 
   function filterCategory(cat) {
     activeCategory = cat;
     document.querySelectorAll('input[name="cat"]').forEach(r => { r.checked = r.value === cat; });
     filterProducts();
     document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
   }
-
+ 
   function resetFilters() {
     activeCategory = 'Toate';
     document.getElementById('priceMin').value = 0;
@@ -1045,28 +1076,28 @@
     document.querySelectorAll('input[name="cat"]').forEach(r => { r.checked = r.value === 'Toate'; });
     filterProducts();
   }
-
+ 
   function addToCart(id) {
     cartCount++;
     document.getElementById('cartBadge').textContent = cartCount;
     showToast();
   }
-
+ 
   function openCart() {
     alert(`Ai ${cartCount} produs(e) în coș.`);
   }
-
+ 
   function showToast() {
     const t = document.getElementById('toast');
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 2000);
   }
-
+ 
   function toggleFaq(el) {
     const item = el.parentElement;
     item.classList.toggle('open');
   }
-
+ 
   // Timer countdown
   let seconds = 18*3600 + 45*60 + 32;
   setInterval(() => {
@@ -1077,7 +1108,7 @@
     const el = document.getElementById('timer');
     if (el) el.textContent = `${h}:${m}:${s}`;
   }, 1000);
-
+ 
   // Init
   renderProducts(products);
 </script>
